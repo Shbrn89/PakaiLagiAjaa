@@ -1,6 +1,3 @@
-// PakaiLagiAja Interactive Demo
-// Data disimpan di localStorage, jadi akun/barang/request tetap ada walaupun halaman di-refresh.
-
 const STORAGE = {
   users: 'pla_users',
   currentUser: 'pla_current_user',
@@ -199,11 +196,6 @@ function injectModals() {
         </form>
         <div class="divider">atau</div>
         <p style="text-align:center;font-size:13px;color:var(--text-muted);">Belum punya akun? <a href="#" onclick="closeModal('login-modal');openModal('register-modal');return false;" style="color:var(--green);">Daftar sekarang</a></p>
-        <div class="demo-login-box">
-          Demo login:<br>
-          <strong>User:</strong> ihsan@mail.com / user12345<br>
-          <strong>Admin:</strong> admin@pakailagiaja.com / admin12345
-        </div>
       </div>
     </div>
 
