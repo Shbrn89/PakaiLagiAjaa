@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PakaiLagiAja - Beranda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+  <nav>
+    <div class="nav-logo" onclick="location.href='index.html'"><span class="leaf">♻</span>PakaiLagiAja</div>
+    <ul class="nav-links">
+      <li><button class="active" onclick="location.href='index.html'">Beranda</button></li>
+      <li><button onclick="location.href='katalog.html'">Katalog</button></li>
+      <li><button onclick="location.href='dashboard.html'">Dashboard</button></li>
+    </ul>
+    <div class="nav-right" id="nav-right"></div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content fade-in">
+      <div class="hero-badge">🌿 SDG 12 — Konsumsi Bertanggung Jawab</div>
+      <h1>Pakai Lagi Aja.</h1>
+      <p>
+        <strong>Reuse Today, Save Tomorrow.</strong>
+        Platform peminjaman, penukaran, dan distribusi barang layak pakai. Bantu sesama, kurangi limbah, dan perpanjang siklus hidup barang.
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="location.href='katalog.html'">Jelajahi Barang →</button>
+        <button class="btn btn-outline" onclick="requireLoginThen(openAddItemModal)">Mulai Donasi</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num" id="home-item-count">0</div><div class="hero-stat-label">Barang aktif</div></div>
+        <div><div class="hero-stat-num" id="home-waste-count">0kg</div><div class="hero-stat-label">Limbah dicegah</div></div>
+        <div><div class="hero-stat-num" id="home-user-count">0</div><div class="hero-stat-label">Pengguna</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="item-card card-float-1"><div class="item-thumb thumb-blue">📚</div><div class="item-name">Buku Kalkulus Ed.9</div><div class="item-meta"><span class="tag tag-blue">Buku</span><span class="item-status">Tersedia</span></div></div>
+        <div class="item-card card-float-2"><div class="item-thumb thumb-green">🌀</div><div class="item-name">Kipas Angin COSMOS</div><div class="item-meta"><span class="tag tag-green">Elektronik</span><span class="item-status">Tersedia</span></div></div>
+        <div class="item-card card-float-3"><div class="item-thumb thumb-amber">🍳</div><div class="item-name">Rice Cooker 1L</div><div class="item-meta"><span class="tag tag-amber">Dapur</span><span class="item-status">Dipinjam</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white-section">
+    <div class="section-inner">
+      <div class="section-label">Fitur Unggulan</div>
+      <div class="section-title">Semua yang kamu butuhkan,<br>dalam satu platform</div>
+      <p class="section-sub">Dari peminjaman terorganisir hingga pelacakan dampak lingkungan — dirancang untuk mahasiswa dan komunitas kampus.</p>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon feature-icon-green">🔄</div><div class="feature-title">Peminjaman & Penukaran</div><p>Ajukan pinjam, terima konfirmasi, dan kembalikan barang dengan alur yang tercatat.</p></div>
+        <div class="feature-card"><div class="feature-icon feature-icon-amber">📋</div><div class="feature-title">Lifecycle Transparan</div><p>Setiap perpindahan dan kondisi barang otomatis tersimpan dalam riwayat.</p></div>
+        <div class="feature-card"><div class="feature-icon feature-icon-blue">📊</div><div class="feature-title">Dashboard SDG</div><p>Pantau jumlah barang aktif, transaksi, dan estimasi limbah yang dicegah.</p></div>
+        <div class="feature-card"><div class="feature-icon feature-icon-coral">🔔</div><div class="feature-title">Notifikasi & Moderasi</div><p>Admin bisa menyetujui barang dan sistem memberi notifikasi otomatis.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Cara Kerja</div>
+    <div class="section-title">Mudah dari awal</div>
+    <div class="steps-grid">
+      <div><span>1</span><h3>Buat Akun</h3><p>Registrasi sebagai User atau Admin.</p></div>
+      <div><span>2</span><h3>Tambah / Cari Barang</h3><p>Tambahkan barang atau jelajahi katalog.</p></div>
+      <div><span>3</span><h3>Ajukan Request</h3><p>Ajukan pinjam, tukar, atau ambil gratis.</p></div>
+      <div><span>4</span><h3>Catat Lifecycle</h3><p>Admin/pemilik menyetujui dan kondisi barang diperbarui.</p></div>
+    </div>
+  </section>
+
+  <footer>PakaiLagiAja — Mendukung SDG 12: Konsumsi dan Produksi Bertanggung Jawab</footer>
+  <script src="script.js"></script>
+</body>
+</html>

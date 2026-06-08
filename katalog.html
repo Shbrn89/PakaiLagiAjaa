@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PakaiLagiAja - Katalog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="catalog">
+  <nav>
+    <div class="nav-logo" onclick="location.href='index.html'"><span class="leaf">♻</span>PakaiLagiAja</div>
+    <ul class="nav-links">
+      <li><button onclick="location.href='index.html'">Beranda</button></li>
+      <li><button class="active" onclick="location.href='katalog.html'">Katalog</button></li>
+      <li><button onclick="location.href='dashboard.html'">Dashboard</button></li>
+    </ul>
+    <div class="nav-right" id="nav-right"></div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Katalog Barang</h1>
+    <p><span id="catalog-count">0</span> barang tersedia dari komunitas</p>
+  </header>
+
+  <main class="catalog-layout">
+    <aside class="sidebar">
+      <div class="sidebar-title">Kategori</div>
+      <button class="cat-btn active" onclick="filterCat(this,'semua')">🏠 Semua <span class="cat-count" id="count-semua">0</span></button>
+      <button class="cat-btn" onclick="filterCat(this,'elektronik')">⚡ Elektronik <span class="cat-count" id="count-elektronik">0</span></button>
+      <button class="cat-btn" onclick="filterCat(this,'buku')">📚 Buku <span class="cat-count" id="count-buku">0</span></button>
+      <button class="cat-btn" onclick="filterCat(this,'dapur')">🍳 Dapur <span class="cat-count" id="count-dapur">0</span></button>
+      <button class="cat-btn" onclick="filterCat(this,'pakaian')">👕 Pakaian <span class="cat-count" id="count-pakaian">0</span></button>
+      <button class="cat-btn" onclick="filterCat(this,'perabot')">🪑 Perabot <span class="cat-count" id="count-perabot">0</span></button>
+      <button class="cat-btn" onclick="filterCat(this,'lainnya')">📦 Lainnya <span class="cat-count" id="count-lainnya">0</span></button>
+
+      <div class="sidebar-title">Status</div>
+      <label class="filter-label"><input type="checkbox" class="filter-status" value="Tersedia" checked> Tersedia</label>
+      <label class="filter-label"><input type="checkbox" class="filter-status" value="Dipinjam" checked> Dipinjam</label>
+      <label class="filter-label"><input type="checkbox" class="filter-status" value="Ditukar" checked> Ditukar</label>
+      <label class="filter-label"><input type="checkbox" class="filter-status" value="Disalurkan" checked> Disalurkan</label>
+
+      <div class="sidebar-title">Jenis</div>
+      <label class="filter-label"><input type="checkbox" class="filter-type" value="Pinjam" checked> Pinjam</label>
+      <label class="filter-label"><input type="checkbox" class="filter-type" value="Tukar" checked> Tukar</label>
+      <label class="filter-label"><input type="checkbox" class="filter-type" value="Gratis" checked> Gratis</label>
+
+      <button class="btn btn-primary full" onclick="requireLoginThen(openAddItemModal)">+ Tambah Barang</button>
+    </aside>
+
+    <section class="catalog-main">
+      <div class="catalog-header">
+        <div class="search-bar"><span>🔍</span><input type="text" id="search-input" placeholder="Cari nama barang..."></div>
+        <select id="sort-select" class="sort-select">
+          <option value="terbaru">Terbaru</option>
+          <option value="az">A–Z</option>
+          <option value="za">Z–A</option>
+        </select>
+      </div>
+      <div class="catalog-grid" id="catalog-grid"></div>
+    </section>
+  </main>
+
+  <footer>PakaiLagiAja — Mendukung SDG 12: Konsumsi dan Produksi Bertanggung Jawab</footer>
+  <script src="script.js"></script>
+</body>
+</html>

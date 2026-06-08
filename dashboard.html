@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PakaiLagiAja - Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard">
+  <nav>
+    <div class="nav-logo" onclick="location.href='index.html'"><span class="leaf">♻</span>PakaiLagiAja</div>
+    <ul class="nav-links">
+      <li><button onclick="location.href='index.html'">Beranda</button></li>
+      <li><button onclick="location.href='katalog.html'">Katalog</button></li>
+      <li><button class="active" onclick="location.href='dashboard.html'">Dashboard</button></li>
+    </ul>
+    <div class="nav-right" id="nav-right"></div>
+  </nav>
+
+  <main class="dashboard-layout">
+    <div class="dash-header">
+      <div>
+        <div class="dash-greeting">Selamat datang, <span id="dash-name">User</span> 👋</div>
+        <div class="dash-sub">Pantau akun, barang, request, notifikasi, dan dampak lingkungan kamu.</div>
+      </div>
+      <button class="btn btn-primary" onclick="requireLoginThen(openAddItemModal)">+ Tambah Barang</button>
+    </div>
+
+    <section class="stats-row">
+      <div class="stat-card green"><div class="stat-label">Barang Aktif</div><div class="stat-num" id="stat-active">0</div><div class="stat-change">Data terbaru</div></div>
+      <div class="stat-card amber"><div class="stat-label">Sedang Dipinjam</div><div class="stat-num" id="stat-borrowed">0</div><div class="stat-change">Lifecycle berjalan</div></div>
+      <div class="stat-card blue"><div class="stat-label">Total Transaksi</div><div class="stat-num" id="stat-transactions">0</div><div class="stat-change">Disetujui / selesai</div></div>
+      <div class="stat-card coral"><div class="stat-label">Limbah Dicegah</div><div class="stat-num" id="stat-waste">0kg</div><div class="stat-change">Estimasi SDG 12</div></div>
+    </section>
+
+    <section class="dash-grid">
+      <div class="dash-panel">
+        <div class="tabs">
+          <button class="tab active" onclick="switchTab(this,'activity')">Aktivitas</button>
+          <button class="tab" onclick="switchTab(this,'notif')">Notifikasi</button>
+          <button class="tab" onclick="switchTab(this,'items')">Barang Saya</button>
+          <button class="tab" onclick="switchTab(this,'requests')">Request</button>
+          <button class="tab admin-only" onclick="switchTab(this,'admin')">Admin</button>
+        </div>
+
+        <div id="tab-activity"><ul class="activity-list" id="activity-list"></ul></div>
+        <div id="tab-notif" style="display:none;"><ul class="notif-list" id="notif-list"></ul></div>
+        <div id="tab-items" style="display:none;"><div class="stack-list" id="my-items-list"></div></div>
+        <div id="tab-requests" style="display:none;"><div class="stack-list" id="request-list"></div></div>
+        <div id="tab-admin" style="display:none;">
+          <div class="admin-note">Panel ini hanya tampil untuk role Admin.</div>
+          <h3 class="mini-title">Moderasi Barang</h3>
+          <div class="stack-list" id="admin-item-list"></div>
+          <h3 class="mini-title">Semua Request</h3>
+          <div class="stack-list" id="admin-request-list"></div>
+        </div>
+      </div>
+
+      <aside class="side-panels">
+        <div class="dash-panel">
+          <div class="panel-header"><div class="panel-title">Dampak Lingkungan</div></div>
+          <div class="sdg-bar"><div class="sdg-bar-label"><span>Barang Beredar</span><b id="bar-items-label">0%</b></div><div class="sdg-bar-track"><div class="sdg-bar-fill fill-green" id="bar-items"></div></div></div>
+          <div class="sdg-bar"><div class="sdg-bar-label"><span>Transaksi Sukses</span><b id="bar-trans-label">0%</b></div><div class="sdg-bar-track"><div class="sdg-bar-fill fill-amber" id="bar-trans"></div></div></div>
+          <div class="sdg-bar"><div class="sdg-bar-label"><span>User Aktif</span><b id="bar-users-label">0%</b></div><div class="sdg-bar-track"><div class="sdg-bar-fill fill-blue" id="bar-users"></div></div></div>
+          <div class="impact-box">🌿 Komunitas sudah mencegah <strong id="impact-text">0kg</strong> potensi limbah rumah tangga.</div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="panel-header"><div class="panel-title">Aksi Cepat</div></div>
+          <div class="quick-grid">
+            <button class="btn btn-outline" onclick="requireLoginThen(openAddItemModal)">📦 Tambah</button>
+            <button class="btn btn-outline" onclick="location.href='katalog.html'">🔍 Katalog</button>
+            <button class="btn btn-outline" onclick="markAllNotificationsRead()">✅ Tandai Baca</button>
+            <button class="btn btn-outline" onclick="resetDemoData()">♻ Reset Demo</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>PakaiLagiAja — Mendukung SDG 12: Konsumsi dan Produksi Bertanggung Jawab</footer>
+  <script src="script.js"></script>
+</body>
+</html>
